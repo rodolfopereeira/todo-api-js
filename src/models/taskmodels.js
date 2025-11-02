@@ -14,7 +14,7 @@ export function addTask(data){
         title: data.title,
         description: data.description,
         done : false,
-        creatAt: new Date.now()
+        creatAt: new Date()
     }
     tasks.push(newTask);
     return newTask;
@@ -32,5 +32,5 @@ export function deleteTask(id){
     const taskIndex = tasks.findIndex(task => task.id === id);
     if(taskIndex === -1) return false;
 
-    tasks.remove(taskIndex);
+    tasks.splice(taskIndex, 1);
 }
